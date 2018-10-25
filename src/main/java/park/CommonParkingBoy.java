@@ -1,6 +1,5 @@
 package park;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +8,9 @@ public class CommonParkingBoy implements ParkingBoy {
     private final List<ParkingLot> parkingLots;
     private Map<ParkTicket, ParkingLot> ticketPark;
 
-    public CommonParkingBoy(List<ParkingLot> parkingLots, Map<ParkTicket, ParkingLot> ticketPark) {
+    public CommonParkingBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
-        this.ticketPark = ticketPark;
+        this.ticketPark = new HashMap<>();
     }
 
     @Override
@@ -30,10 +29,6 @@ public class CommonParkingBoy implements ParkingBoy {
     public Car pickUp(ParkTicket parkTicket) {
         ParkingLot parkingLot = ticketPark.get(parkTicket);
         return parkingLot.pickUp(parkTicket);
-    }
-
-    public List<ParkingLot> getPakingLots() {
-        return parkingLots;
     }
 
     public int manageSeats() {

@@ -3,8 +3,6 @@ package park;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,8 +16,7 @@ class CommonParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots, ticketPark);
+        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots);
 
         //when
         Car car1 = new Car();
@@ -43,8 +40,7 @@ class CommonParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots, ticketPark);
+        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots);
 
         //when
         Car car = new Car();
@@ -63,8 +59,7 @@ class CommonParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots, ticketPark);
+        CommonParkingBoy commonParkingBoy = new CommonParkingBoy(parkingLots);
 
         //when
         Car car = new Car();

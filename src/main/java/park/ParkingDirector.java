@@ -14,9 +14,9 @@ public class ParkingDirector {
         }
         if (null != parkingManager.getCommonParkingBoy()) {
             reportOutPrintInfo.append(" B " + parkingManager.getCommonParkingBoy().parkingCarAmount() + " " + parkingManager.getCommonParkingBoy().manageSeats() + System.lineSeparator());
-            for (ParkingLot parkingLot : parkingManager.getCommonParkingBoy().getPakingLots()) {
+/*            for (ParkingLot parkingLot : parkingManager.getCommonParkingBoy().getPakingLots()) {
                 reportOutPrintInfo.append("   P " + parkingLot.pakingCarNumber() + " " + parkingLot.getCapacity() + System.lineSeparator());
-            }
+            }*/
         }
         if (null != parkingManager.getSmartParkingBoy()) {
             reportOutPrintInfo.append(" B " + parkingManager.getSmartParkingBoy().pakingCarAmount() + " " + parkingManager.getSmartParkingBoy().manageSeats() + System.lineSeparator());
@@ -67,10 +67,10 @@ public class ParkingDirector {
             System.out.println("P " + parkingLot.pakingCarNumber() + " " + parkingLot.getCapacity());
         }
         if (null != parkingManager.getCommonParkingBoy()) {
-            System.out.println(" B " + parkingManager.getCommonParkingBoy().parkingCarAmount() + " " + parkingManager.getCommonParkingBoy().manageSeats());
+/*            System.out.println(" B " + parkingManager.getCommonParkingBoy().parkingCarAmount() + " " + parkingManager.getCommonParkingBoy().manageSeats());
             for (ParkingLot parkingLot : parkingManager.getCommonParkingBoy().getPakingLots()) {
                 System.out.println("   P " + parkingLot.pakingCarNumber() + " " + parkingLot.getCapacity());
-            }
+            }*/
         }
         if (null != parkingManager.getSmartParkingBoy()) {
             System.out.println(" B " + parkingManager.getSmartParkingBoy().pakingCarAmount() + " " + parkingManager.getSmartParkingBoy().manageSeats());
