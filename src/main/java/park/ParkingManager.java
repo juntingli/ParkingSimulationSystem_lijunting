@@ -1,43 +1,33 @@
 package park;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ParkingManager {
     private final List<ParkingLot> parkingLots;
     private Map<ParkTicket, ParkingLot> ticketPark;
-    private CommonParkingBoy commonParkingBoy;
-    private SmartParkingBoy smartParkingBoy;
-    private SuperParkingBoy superParkingBoy;
+    private Map<ParkTicket, ParkingBoy> ticketBoy;
+    private List<ParkingBoy> parkingBoys;
 
-    public ParkingManager(List<ParkingLot> parkingLots, Map<ParkTicket, ParkingLot> ticketPark) {
+    public ParkingManager(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
-        this.ticketPark = ticketPark;
+        this.ticketPark = new HashMap<>();
+        this.ticketBoy = new HashMap<>();
+        this.parkingBoys = new ArrayList<>();
     }
 
     public void assignParkingLotsToCommonParkingBoy(List<ParkingLot> parkingLots) {
-        commonParkingBoy = new CommonParkingBoy(parkingLots);
+        parkingBoys.add(new CommonParkingBoy(parkingLots));
     }
 
     public void assignParkingLotsToSmartParkingBoy(List<ParkingLot> parkingLots) {
-        smartParkingBoy = new SmartParkingBoy(parkingLots);
+        parkingBoys.add(new SmartParkingBoy(parkingLots));
     }
 
     public void assignParkingLotsToSuperParkingBoy(List<ParkingLot> parkingLots) {
-        superParkingBoy = new SuperParkingBoy(parkingLots);
-    }
-
-    public CommonParkingBoy getCommonParkingBoy() {
-        return commonParkingBoy;
-    }
-
-    public SmartParkingBoy getSmartParkingBoy() {
-        return smartParkingBoy;
-    }
-
-    public SuperParkingBoy getSuperParkingBoy() {
-        return superParkingBoy;
+        parkingBoys.add(new SuperParkingBoy(parkingLots));
     }
 
     public ParkTicket personallyPark(Car car) {
@@ -52,29 +42,45 @@ public class ParkingManager {
     }
 
     public ParkTicket letCommonParkingBoyToPark(Car car) {
-        if (null != commonParkingBoy) {
-            return commonParkingBoy.park(car);
+        ParkTicket parkTicket = null;
+        for(ParkingBoy parkingBoy : parkingBoys){
+            if(null != parkingBoy && parkingBoy instanceof CommonParkingBoy){
+                parkTicket = parkingBoy.park(car);
+                ticketBoy.put(parkTicket, parkingBoy);
+            }
         }
-        return null;
+        return parkTicket;
     }
 
     public ParkTicket letSmartParkingBoyToPark(Car car) {
-        if (null != smartParkingBoy) {
-            return smartParkingBoy.park(car);
+        ParkTicket parkTicket = null;
+        for(ParkingBoy parkingBoy : parkingBoys){
+            if(null != parkingBoy && parkingBoy instanceof SmartParkingBoy){
+                parkTicket = parkingBoy.park(car);
+                ticketBoy.put(parkTicket, parkingBoy);
+            }
         }
-        return null;
+        return parkTicket;
     }
 
     public ParkTicket letSuperParkingBoyToPark(Car car) {
-        if (null != superParkingBoy) {
-            return superParkingBoy.park(car);
+        ParkTicket parkTicket = null;
+        for(ParkingBoy parkingBoy : parkingBoys){
+            if(null != parkingBoy && parkingBoy instanceof SuperParkingBoy){
+                parkTicket = parkingBoy.park(car);
+                ticketBoy.put(parkTicket, parkingBoy);
+            }
         }
-        return null;
+        return parkTicket;
     }
 
     public Car pickUp(ParkTicket parkTicket) {
         ParkingLot parkingLot = ticketPark.get(parkTicket);
-        return parkingLot.pickUp(parkTicket);
+        if (parkingLot != null) {
+            return parkingLot.pickUp(parkTicket);
+        }
+        ParkingBoy parkingBoy = ticketBoy.get(parkTicket);
+        return parkingBoy.pickUp(parkTicket);
     }
 
     public int manageSeats() {
@@ -82,27 +88,21 @@ public class ParkingManager {
         for (ParkingLot parkingLot : parkingLots) {
             manageSeats = manageSeats + parkingLot.getCapacity();
         }
+        for (ParkingBoy parkingBoy : parkingBoys){
+            manageSeats = manageSeats + parkingBoy.manageSeats();
+        }
         return manageSeats;
     }
 
-    public int pakingCarAmount() {
-        int pakingCarAmount = 0;
+    public int parkingCarAmount() {
+        int parkingCarAmount = 0;
         for (ParkingLot parkingLot : parkingLots) {
-            pakingCarAmount = pakingCarAmount + parkingLot.pakingCarNumber();
+            parkingCarAmount = parkingCarAmount + parkingLot.parkingCarNumber();
         }
-        return pakingCarAmount;
+        for (ParkingBoy parkingBoy : parkingBoys){
+            parkingCarAmount = parkingCarAmount + parkingBoy.parkingCarAmount();
+        }
+        return parkingCarAmount;
     }
 
-    public List<ParkingLot> getPersonalPakingLots() {
-        List<ParkingLot> tempParkingLots = new ArrayList<>();
-        tempParkingLots.addAll(parkingLots);
-        if (null != commonParkingBoy) {
-        }
-        if (null != smartParkingBoy) {
-
-        }
-        if (null != superParkingBoy) {
-        }
-        return tempParkingLots;
-    }
 }

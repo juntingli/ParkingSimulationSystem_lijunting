@@ -31,6 +31,7 @@ public class CommonParkingBoy implements ParkingBoy {
         return parkingLot.pickUp(parkTicket);
     }
 
+    @Override
     public int manageSeats() {
         int manageSeats = 0;
         for (ParkingLot parkingLot : parkingLots) {
@@ -39,11 +40,12 @@ public class CommonParkingBoy implements ParkingBoy {
         return manageSeats;
     }
 
+    @Override
     public int parkingCarAmount() {
-        int pakingCarAmount = 0;
+        int parkingCarAmount = 0;
         for (ParkingLot parkingLot : parkingLots) {
-            pakingCarAmount = pakingCarAmount + parkingLot.pakingCarNumber();
+            parkingCarAmount = parkingCarAmount + parkingLot.parkingCarNumber();
         }
-        return pakingCarAmount;
+        return parkingCarAmount;
     }
 }

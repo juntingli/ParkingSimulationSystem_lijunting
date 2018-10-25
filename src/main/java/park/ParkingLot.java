@@ -46,7 +46,7 @@ public class ParkingLot {
         return capacity;
     }
 
-    public int pakingCarNumber() {
+    public int parkingCarNumber() {
         return parkTicketCarHashMap.size();
     }
 }

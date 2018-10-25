@@ -24,8 +24,7 @@ class ParkingDirectorTest {
         parkingLots.add(parkingLot2);
         parkingLots.add(parkingLot3);
         parkingLots.add(parkingLot4);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        ParkingManager parkingManager = new ParkingManager(parkingLots, ticketPark);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
         List<ParkingLot> smartParkingBoyParkingLots = new ArrayList<>();
         smartParkingBoyParkingLots.add(parkingLot2);
         List<ParkingLot> suoerParkingBoyParkingLots = new ArrayList<>();

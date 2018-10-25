@@ -3,9 +3,7 @@ package park;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,8 +22,7 @@ class ParkingManagerTest {
         parkingLots.add(parkingLot2);
         parkingLots.add(parkingLot3);
         parkingLots.add(parkingLot4);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        ParkingManager parkingManager = new ParkingManager(parkingLots, ticketPark);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
         List<ParkingLot> smartParkingBoyParkingLots = new ArrayList<>();
         smartParkingBoyParkingLots.add(parkingLot2);
         List<ParkingLot> suoerParkingBoyParkingLots = new ArrayList<>();
@@ -56,14 +53,13 @@ class ParkingManagerTest {
         parkingLots.add(parkingLot2);
         parkingLots.add(parkingLot3);
         parkingLots.add(parkingLot4);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        ParkingManager parkingManager = new ParkingManager(parkingLots, ticketPark);
         List<ParkingLot> commonParkingBoyParkingLots = new ArrayList<>();
         commonParkingBoyParkingLots.add(parkingLot2);
         List<ParkingLot> smartParkingBoyParkingLots = new ArrayList<>();
         smartParkingBoyParkingLots.add(parkingLot3);
         List<ParkingLot> superParkingBoyParkingLots = new ArrayList<>();
         superParkingBoyParkingLots.add(parkingLot4);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
         parkingManager.assignParkingLotsToCommonParkingBoy(commonParkingBoyParkingLots);
         parkingManager.assignParkingLotsToSmartParkingBoy(smartParkingBoyParkingLots);
         parkingManager.assignParkingLotsToSuperParkingBoy(superParkingBoyParkingLots);
@@ -90,8 +86,7 @@ class ParkingManagerTest {
         parkingLots.add(parkingLot2);
         parkingLots.add(parkingLot3);
         parkingLots.add(parkingLot4);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        ParkingManager parkingManager = new ParkingManager(parkingLots, ticketPark);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
         List<ParkingLot> commonParkingBoyParkingLots = new ArrayList<>();
         commonParkingBoyParkingLots.add(parkingLot2);
         List<ParkingLot> smartParkingBoyParkingLots = new ArrayList<>();
@@ -125,8 +120,7 @@ class ParkingManagerTest {
         parkingLots.add(parkingLot2);
         parkingLots.add(parkingLot3);
         parkingLots.add(parkingLot4);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        ParkingManager parkingManager = new ParkingManager(parkingLots, ticketPark);
+        ParkingManager parkingManager = new ParkingManager(parkingLots);
         List<ParkingLot> commonParkingBoyParkingLots = new ArrayList<>();
         commonParkingBoyParkingLots.add(parkingLot2);
         List<ParkingLot> smartParkingBoyParkingLots = new ArrayList<>();
