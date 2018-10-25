@@ -44,7 +44,7 @@ public class CommonParkingBoy implements ParkingBoy {
         return manageSeats;
     }
 
-    public int pakingCarAmount() {
+    public int parkingCarAmount() {
         int pakingCarAmount = 0;
         for (ParkingLot parkingLot : parkingLots) {
             pakingCarAmount = pakingCarAmount + parkingLot.pakingCarNumber();
