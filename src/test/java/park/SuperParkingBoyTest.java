@@ -19,8 +19,7 @@ class SuperParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots, ticketPark);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
 
         //when
         Car car1 = new Car();
@@ -44,8 +43,7 @@ class SuperParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots, ticketPark);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
 
         //when
         Car car1 = new Car();
@@ -68,8 +66,7 @@ class SuperParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots, ticketPark);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
 
         //when
         Car car1 = new Car();
@@ -93,8 +90,7 @@ class SuperParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots, ticketPark);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
 
         //when
         Car car = new Car();

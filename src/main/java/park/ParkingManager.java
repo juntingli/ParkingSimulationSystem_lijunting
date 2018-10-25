@@ -25,7 +25,7 @@ public class ParkingManager {
     }
 
     public void assignParkingLotsToSuperParkingBoy(List<ParkingLot> parkingLots) {
-        superParkingBoy = new SuperParkingBoy(parkingLots, ticketPark);
+        superParkingBoy = new SuperParkingBoy(parkingLots);
     }
 
     public CommonParkingBoy getCommonParkingBoy() {
@@ -102,7 +102,6 @@ public class ParkingManager {
 
         }
         if (null != superParkingBoy) {
-            tempParkingLots.removeAll(superParkingBoy.getPakingLots());
         }
         return tempParkingLots;
     }

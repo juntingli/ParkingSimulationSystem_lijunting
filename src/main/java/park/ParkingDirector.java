@@ -26,9 +26,9 @@ public class ParkingDirector {
         }
         if (null != parkingManager.getSuperParkingBoy()) {
             reportOutPrintInfo.append(" B " + parkingManager.getSuperParkingBoy().pakingCarAmount() + " " + parkingManager.getSuperParkingBoy().manageSeats() + System.lineSeparator());
-            for (ParkingLot parkingLot : parkingManager.getSuperParkingBoy().getPakingLots()) {
+/*            for (ParkingLot parkingLot : parkingManager.getSuperParkingBoy().getPakingLots()) {
                 reportOutPrintInfo.append("   P " + parkingLot.pakingCarNumber() + " " + parkingLot.getCapacity() + System.lineSeparator());
-            }
+            }*/
         }
         return reportOutPrintInfo.toString();
     }
@@ -80,9 +80,9 @@ public class ParkingDirector {
         }
         if (null != parkingManager.getSuperParkingBoy()) {
             System.out.println(" B " + parkingManager.getSuperParkingBoy().pakingCarAmount() + " " + parkingManager.getSuperParkingBoy().manageSeats());
-            for (ParkingLot parkingLot : parkingManager.getSuperParkingBoy().getPakingLots()) {
+/*            for (ParkingLot parkingLot : parkingManager.getSuperParkingBoy().getPakingLots()) {
                 System.out.println("   P " + parkingLot.pakingCarNumber() + " " + parkingLot.getCapacity());
-            }
+            }*/
         }
         System.out.println("-----------------------------------------------------------");
         ParkingDirector parkingDirector = new ParkingDirector();
