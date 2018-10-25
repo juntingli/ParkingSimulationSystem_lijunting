@@ -19,8 +19,7 @@ class SmartParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots, ticketPark);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots);
 
         //when
         Car car1 = new Car();
@@ -44,8 +43,7 @@ class SmartParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots, ticketPark);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots);
 
         //when
         Car car = new Car();
@@ -64,8 +62,7 @@ class SmartParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots, ticketPark);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots);
 
         //when
         Car car = new Car();
@@ -85,8 +82,7 @@ class SmartParkingBoyTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(parkingLot1);
         parkingLots.add(parkingLot2);
-        Map<ParkTicket, ParkingLot> ticketPark = new HashMap<>();
-        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots, ticketPark);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy(parkingLots);
 
         //when
         Car car = new Car();

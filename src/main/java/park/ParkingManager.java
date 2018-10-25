@@ -21,7 +21,7 @@ public class ParkingManager {
     }
 
     public void assignParkingLotsToSmartParkingBoy(List<ParkingLot> parkingLots) {
-        smartParkingBoy = new SmartParkingBoy(parkingLots, ticketPark);
+        smartParkingBoy = new SmartParkingBoy(parkingLots);
     }
 
     public void assignParkingLotsToSuperParkingBoy(List<ParkingLot> parkingLots) {
@@ -99,7 +99,7 @@ public class ParkingManager {
         if (null != commonParkingBoy) {
         }
         if (null != smartParkingBoy) {
-            tempParkingLots.removeAll(smartParkingBoy.getPakingLots());
+
         }
         if (null != superParkingBoy) {
             tempParkingLots.removeAll(superParkingBoy.getPakingLots());
